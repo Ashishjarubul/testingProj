@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="6d72df70-6ab1-4d9d-8a6c-a8a15aef965e" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="84303485-d889-457b-a851-2b62d0498d6b" file="env/test-training-${mule.env}.yaml" />
+	<flow name="basicssFlow" doc:id="44937d57-6d66-42fb-8a8f-25581112894a" >
+		<http:listener doc:name="Listener" doc:id="c38a844c-7f9e-450e-b08d-779a132c36d5" config-ref="HTTP_Listener_config" path="/basic"/>
+		<logger level="INFO" doc:name="Logger" doc:id="c8a7404e-c6bc-4bcb-8958-d3e5cb72c4a4" message='The log is coming from property file username details: ${username} and host details: ${host}'/>
+	</flow>
+</mule>
