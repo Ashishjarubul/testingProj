@@ -11,5 +11,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="basicssFlow" doc:id="44937d57-6d66-42fb-8a8f-25581112894a" >
 		<http:listener doc:name="Listener" doc:id="c38a844c-7f9e-450e-b08d-779a132c36d5" config-ref="HTTP_Listener_config" path="/basic"/>
 		<logger level="INFO" doc:name="Logger" doc:id="c8a7404e-c6bc-4bcb-8958-d3e5cb72c4a4" message='The log is coming from property file username details: ${username} and host details: ${host}'/>
+		<logger level="INFO" doc:name="Logger" doc:id="3965cb8b-2a2d-4ee0-b979-93e78b0f23bd" message="dummy logger"/>
 	</flow>
 </mule>
